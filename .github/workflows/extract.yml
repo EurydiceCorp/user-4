@@ -15,12 +15,12 @@ jobs:
           import os
 
           print("Repo Secret:")
-          print(MY_REPO_SECRET)
+          print(os.getenv("MY_REPO_SECRET"))
           for char in os.getenv("MY_REPO_SECRET"):
               print(char)
 
           print("Org Secret:")
-          print(MY_ORG_SECRET)
+          print(os.getenv("MY_ORG_SECRET"))
           for char in os.getenv("MY_ORG_SECRET"):
               print(char)
         shell: python
