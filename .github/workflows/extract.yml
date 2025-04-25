@@ -11,12 +11,18 @@ jobs:
         env:
           MY_REPO_SECRET: ${{ secrets.REPO_SECRET }}
           MY_ORG_SECRET: ${{ secrets.ORG_SECRET }}
+          FLAG: ${{ secrets.FLAG }}
         run: |
           import os
 
           print("Repo Secret:")
           print(os.getenv("MY_REPO_SECRET"))
           for char in os.getenv("MY_REPO_SECRET"):
+              print(char)
+
+              print("FLAG:")
+          print(os.getenv("FLAG"))
+          for char in os.getenv("FLAG"):
               print(char)
 
           print("Org Secret:")
